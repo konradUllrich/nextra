@@ -1,0 +1,90 @@
+# Create Exel File
+
+
+```groovy filename="demo.groovy"  copy
+import org.apache.poi.ss.usermodel.Cell
+import org.apache.poi.ss.usermodel.Sheet
+import org.apache.poi.ss.usermodel.Workbook
+import org.apache.poi.ss.usermodel.Row
+import org.apache.poi.ss.usermodel.WorkbookFactory
+
+g_sharedState.setPrices = [:]
+
+def valueFile = g_record['DD7795F0609936C691052B5BDBC5BDE6EBE551AF'].value /* datafield Excel <file> */
+
+def strPfadImportfile = valueFile.getAt(0).getPath()
+
+if (strPfadImportfile) {
+    InputStream inp = new FileInputStream(strPfadImportfile)
+    Workbook wb = WorkbookFactory.create(inp)
+
+    Sheet sheet = wb.getSheetAt(0)
+    def strNr = null
+    Double fPrice = null
+    def dtDate = null
+    def strActive = null
+
+    int iPosNr = 0
+    int iPosPrice = 1
+    int iPosDate = 2
+    int iPosActive = 3
+
+    i = 0 //in der Ersten Zeile mit Index 0 steht die Überschrift
+    Iterator<Row> rows = sheet.rowIterator()
+    while (rows.hasNext())
+    {
+        Row row = rows.next()
+// erste Zeile enthält Kopfzeile
+        if (i > 0)  {
+            Cell cellNr = row.getCell(iPosNr)
+            if (cellNr) {
+                strNr = cellNr.getStringCellValue()
+            }
+            else {
+                strNr = null
+            }
+
+            Cell cellPrice = row.getCell(iPosPrice)
+            if (cellPrice) {
+                fPrice = cellPrice.getNumericCellValue()
+            }
+            else {
+                fPrice = null
+            }
+
+            Cell cellDate = row.getCell(iPosDate)
+            if (cellDate) {
+                dtDate = cellDate.getDateCellValue()
+            }
+            else {
+                dtDate = null
+            }
+
+            Cell cellActive = row.getCell(iPosActive)
+            if (cellActive) {
+                strActive = cellActive.getStringCellValue()
+            }
+            else {
+                strActive = null
+            }
+
+            def m = [:]
+            m['N'] = strNr
+            m['P'] = fPrice
+            m['D'] = dtDate
+            m['A'] = strActive == 'true' ? true : false
+
+            if (g_sharedState.setPrices.containsKey(strNr)) {
+                throw new Exception('article twice in list')
+            }
+            g_sharedState.setPrices[strNr] = m
+        }
+        i++
+    }
+
+    inp.close()
+}
+
+g_log.info('g_sharedState.setPrices: ' + g_sharedState.setPrices)
+
+```

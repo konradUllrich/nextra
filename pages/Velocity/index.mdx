@@ -1,0 +1,14 @@
+```js
+#set($endDate = $drRecord.getValueHolder('datetimevcontrolF27894FD').getValue())
+#set($endDateNewF = $DtUtil.formatDate('dd/MM/yyyy',$endDate,$User.getTimeZone()))
+
+#set($currentDate = $DtUtil.now($User.getTimeZone()))
+#if($endDate.before($currentDate))
+	#set($color = 'red')
+#else
+	#set($color = 'grey')
+#end
+
+<span class="Text_Standard" style="color:$color;font-weight:normal;"> $endDateNewF </span>
+
+```
