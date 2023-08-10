@@ -1,17 +1,19 @@
-/*
-* Eingabeseite innerhalb einer freien Tabelle Zeile für Zeile auslesen und bearbeiten
-*/
-function freieTabelleZeilen(){
-    var table = getElement("4747538582A76EAFB246DA9C2AE5DC6B9E1866FB"); /*Öffnungszeiten  shapedtable*/
-    var recs = table.oUp.getRecords();
-    var myvalue;
-    var hvalue;
+# Eingabeseite innerhalb einer freien Tabelle Zeile für Zeile auslesen und bearbeiten
 
-    for (var i=0;i<recs.length;i++)
-        {
-            myvalue = recs[i].getControl("3D51B145B0A22750743CCD2D8AA5011CAD5287C8"); // GUID des Feldes
-            hvalue = myvalue.getValue();
-        }
+```js
+function freieTabelleZeilen() {
+  var table = getElement(
+    "4747538582A76EAFB246DA9C2AE5DC6B9E1866FB"
+  ); /*Öffnungszeiten  shapedtable*/
+  var recs = table.oUp.getRecords();
+  var myvalue;
+  var hvalue;
 
-    return true;
+  for (var i = 0; i < recs.length; i++) {
+    myvalue = recs[i].getControl("3D51B145B0A22750743CCD2D8AA5011CAD5287C8"); // GUID des Feldes
+    hvalue = myvalue.getValue();
+  }
+
+  return true;
 }
+```

@@ -1,7 +1,10 @@
-/*
-*  Radio Button Kontrolle wird auf null gesetzt -> keine Option ist ausgewählt
-*/
-function defaultRadios (fieldsetGuid) {
-    getElement(fieldsetGuid).oUp.radioElements.forEach (radiocontrol => Browser.setValue(radiocontrol, ""));
-    return true;
+# Radio Button Kontrolle wird auf null gesetzt -> keine Option ist ausgewählt
+
+```js
+function defaultRadios(fieldsetGuid) {
+  getElement(fieldsetGuid).oUp.radioElements.forEach((radiocontrol) =>
+    Browser.setValue(radiocontrol, "")
+  );
+  return true;
 }
+```

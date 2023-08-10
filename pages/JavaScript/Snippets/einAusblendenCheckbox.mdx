@@ -1,21 +1,24 @@
-/*
-*  Dynamisches Ein- und ausblenden von Rastern bei Checkboxen. Zusätzlich wird der Speicher Button aktiviert bzw. deaktiviert (bleibt aber sichtbar)
-*/
+# Dynamisches Ein- und ausblenden von Rastern bei Checkboxen. Zusätzlich wird der Speicher Button aktiviert bzw. deaktiviert (bleibt aber sichtbar)
+
+```js
 function checkboxChecken() {
-    var checkbox = getElement("065E7D9DCC901ADCE1AE6F28EDEA0818002A0FD0"); /*Bestätigung  checkcontrol*/
-    var raster = getElement("A15A10E33ACF2B5D9CF34B92843B7CD342DCA5DF");
-    var speichern = getElement("944658940F7E14ACB6F7E86343BC056E47AF152F"); /*Ja, absenden  buttoncontrol*/
+  var checkbox = getElement(
+    "065E7D9DCC901ADCE1AE6F28EDEA0818002A0FD0"
+  ); /*Bestätigung  checkcontrol*/
+  var raster = getElement("A15A10E33ACF2B5D9CF34B92843B7CD342DCA5DF");
+  var speichern = getElement(
+    "944658940F7E14ACB6F7E86343BC056E47AF152F"
+  ); /*Ja, absenden  buttoncontrol*/
 
-
-
-    if(checkbox.checked){
-        speichern.oUp.enable();
-        raster.style.visibility = "hidden";
-        raster.style.display= "none";
-    } else {
-        speichern.oUp.disable();
-        raster.style.visibility = "visible";
-        raster.style.display= "block";
-    }
-    return true;
+  if (checkbox.checked) {
+    speichern.oUp.enable();
+    raster.style.visibility = "hidden";
+    raster.style.display = "none";
+  } else {
+    speichern.oUp.disable();
+    raster.style.visibility = "visible";
+    raster.style.display = "block";
+  }
+  return true;
 }
+```
