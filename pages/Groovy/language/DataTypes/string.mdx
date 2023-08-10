@@ -1,0 +1,95 @@
+# String
+
+A String in Groovy is a sequence of characters. It represents text data and is one of the fundamental data types in the language. Strings are often used for storing and manipulating textual information.
+
+### Creating Strings
+
+Strings can be created using either single quotes (`'`) or double quotes (`"`). Here's how you can create strings:
+
+```groovy
+def singleQuoted = 'This is a single-quoted string.'
+def doubleQuoted = "This is a double-quoted string."
+```
+
+### String Interpolation
+
+String interpolation allows you to embed variables or expressions within a string using the `${}` syntax:
+
+```groovy
+def name = 'Alice'
+def greeting = "Hello, ${name}!"
+```
+
+### Common String Operations
+
+Groovy provides various methods for performing operations on strings:
+
+- **Length:** Get the number of characters in a string.
+
+  ```groovy
+  def text = 'Hello, World!'
+  def length = text.length()  // Returns 13
+  ```
+
+- **Concatenation:** Combine two or more strings.
+
+  ```groovy
+  def firstName = 'John'
+  def lastName = 'Doe'
+  def fullName = firstName + ' ' + lastName  // Results in 'John Doe'
+  ```
+
+- **Substring:** Extract a portion of a string.
+
+  ```groovy
+  def text = 'Hello, World!'
+  def substring = text[7..11]  // Returns 'World'
+  ```
+
+- **Searching:** Find the index of a substring within a string.
+
+  ```groovy
+  def text = 'Hello, World!'
+  def index = text.indexOf('World')  // Returns 7
+  ```
+
+- **Replacing:** Replace occurrences of a substring with another.
+
+  ```groovy
+  def text = 'Hello, World!'
+  def newText = text.replace('Hello', 'Hi')  // Results in 'Hi, World!'
+  ```
+
+- **Trimming:** Remove leading and trailing whitespace.
+
+  ```groovy
+  def text = '   Some text   '
+  def trimmed = text.trim()  // Results in 'Some text'
+  ```
+
+- **Converting Case:** Change the case of a string.
+  ```groovy
+  def text = 'Groovy Language'
+  def lowercase = text.toLowerCase()  // Results in 'groovy language'
+  def uppercase = text.toUpperCase()  // Results in 'GROOVY LANGUAGE'
+  ```
+
+### String Methods and Properties
+
+Strings in Groovy have numerous methods and properties for various text manipulation tasks. You can find more information about these methods and their usage in the Groovy documentation.
+
+### Example
+
+```groovy
+def message = 'Hello, Groovy!'
+def length = message.length()
+def uppercaseMessage = message.toUpperCase()
+
+println("Message: ${message}")
+println("Length: ${length}")
+println("Uppercase Message: ${uppercaseMessage}")
+```
+
+Remember that strings are immutable in Groovy, which means that operations that appear to modify a string actually return a new string with the desired changes.
+
+Please note that this documentation provides a general overview of the String data type in Groovy and may not cover all available methods and features. For more detailed information, refer to the official Groovy documentation.

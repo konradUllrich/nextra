@@ -1,0 +1,70 @@
+# Integer
+
+An Integer in Groovy represents a whole number without a fractional component. It's a fundamental data type used for performing arithmetic operations and storing numeric values.
+
+### Creating Integers
+
+Integers can be created using standard numeric literals:
+
+```groovy
+def positiveInt = 42
+def negativeInt = -10
+```
+
+### Arithmetic Operations
+
+Groovy supports various arithmetic operations on integers:
+
+- **Addition (`+`):** Adds two integers.
+- **Subtraction (`-`):** Subtracts one integer from another.
+- **Multiplication (`*`):** Multiplies two integers.
+- **Division (`/`):** Divides one integer by another.
+- **Modulus (`%`):** Calculates the remainder of division.
+
+```groovy
+def a = 10
+def b = 3
+def sum = a + b       // Results in 13
+def difference = a - b  // Results in 7
+def product = a * b    // Results in 30
+def quotient = a / b   // Results in 3 (integer division)
+def remainder = a % b  // Results in 1
+```
+
+### Common Methods and Properties
+
+- **`toString()`:** Converts an integer to its string representation.
+
+  ```groovy
+  def num = 123
+  def numStr = num.toString()  // Results in '123'
+  ```
+
+- **`abs()`:** Returns the absolute value of an integer.
+
+  ```groovy
+  def negativeNum = -5
+  def absValue = negativeNum.abs()  // Results in 5
+  ```
+
+- **`toHexString()`, `toOctalString()`, `toBinaryString()`:** Convert an integer to its hexadecimal, octal, or binary string representation.
+  ```groovy
+  def num = 42
+  def hexStr = num.toHexString()    // Results in '2a'
+  def octalStr = num.toOctalString() // Results in '52'
+  def binaryStr = num.toBinaryString() // Results in '101010'
+  ```
+
+### Example
+
+```groovy
+def num1 = 10
+def num2 = 5
+def sum = num1 + num2
+def product = num1 * num2
+
+println("Sum: ${sum}")
+println("Product: ${product}")
+```
+
+Please note that this documentation provides a general overview of the Integer data type in Groovy and may not cover all available methods and features. For more detailed information, refer to the official Groovy documentation.

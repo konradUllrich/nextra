@@ -1,0 +1,71 @@
+# Double
+
+A Double in Groovy represents a floating-point number with a decimal component. It's used to store real numbers that might have fractional parts.
+
+### Creating Doubles
+
+Doubles can be created using numeric literals with a decimal point:
+
+```groovy
+def pi = 3.14159
+def temperature = -5.5
+```
+
+### Arithmetic Operations
+
+You can perform various arithmetic operations on Double values:
+
+- **Addition (`+`):** Adds two Double values.
+- **Subtraction (`-`):** Subtracts one Double value from another.
+- **Multiplication (`*`):** Multiplies two Double values.
+- **Division (`/`):** Divides one Double value by another.
+
+```groovy
+def a = 10.5
+def b = 2.0
+def sum = a + b         // Results in 12.5
+def difference = a - b  // Results in 8.5
+def product = a * b     // Results in 21.0
+def quotient = a / b    // Results in 5.25
+```
+
+### Common Methods and Properties
+
+- **`toString()`:** Converts a Double to its string representation.
+
+  ```groovy
+  def value = 3.14
+  def valueStr = value.toString()  // Results in '3.14'
+  ```
+
+- **`intValue()`, `longValue()`:** Converts a Double to an integer or long value.
+
+  ```groovy
+  def value = 7.8
+  def intValue = value.intValue()   // Results in 7
+  def longValue = value.longValue() // Results in 7
+  ```
+
+- **`isInfinite()`, `isNaN()`:** Checks if the Double value is infinite or NaN (Not-a-Number).
+
+  ```groovy
+  def infinity = Double.POSITIVE_INFINITY
+  def notANumber = Double.NaN
+
+  println("Is infinity? ${infinity.isInfinite()}")
+  println("Is NaN? ${notANumber.isNaN()}")
+  ```
+
+### Example
+
+```groovy
+def radius = 5.0
+def circumference = 2 * Math.PI * radius
+def area = Math.PI * radius * radius
+
+println("Radius: ${radius}")
+println("Circumference: ${circumference}")
+println("Area: ${area}")
+```
+
+Please note that this documentation provides a general overview of the Double data type in Groovy and may not cover all available methods and features. For more detailed information, refer to the official Groovy documentation.

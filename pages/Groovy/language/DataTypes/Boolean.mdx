@@ -1,0 +1,57 @@
+# Boolean
+
+A Boolean in Groovy represents a logical value that can be either true or false. Booleans are often used in conditional statements and to control the flow of a program based on certain conditions.
+
+### Creating Booleans
+
+Booleans can be created using the literals `true` and `false`:
+
+```groovy
+def isSunny = true
+def isRaining = false
+```
+
+### Logical Operations
+
+Groovy supports various logical operations on Boolean values:
+
+- **Logical AND (`&&`):** Returns true if both operands are true.
+- **Logical OR (`||`):** Returns true if at least one operand is true.
+- **Logical NOT (`!`):** Negates the value of a Boolean.
+
+```groovy
+def isWeekend = true
+def hasHomework = false
+
+def canGoOutside = isWeekend && !hasHomework // true
+```
+
+### Conditional Statements
+
+Boolean values are often used in conditional statements to make decisions in your code:
+
+```groovy
+def age = 18
+def isAdult = age >= 18
+
+if (isAdult) {
+    println("You are an adult.")
+} else {
+    println("You are not an adult.")
+}
+```
+
+### Example
+
+```groovy
+def isMorning = true
+def isWeekend = false
+
+def shouldWakeUpEarly = isMorning && !isWeekend
+
+println("Is it morning? ${isMorning}")
+println("Is it a weekend? ${isWeekend}")
+println("Should I wake up early? ${shouldWakeUpEarly}")
+```
+
+Please note that this documentation provides a general overview of the Boolean data type in Groovy and may not cover all available methods and features. For more detailed information, refer to the official Groovy documentation.
